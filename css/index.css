@@ -63,8 +63,6 @@ h2 {
 /* Experience header (title and date) */
 .experience-header {
   display: flex;
-  position: sticky;
-  top: 0;
   justify-content: space-between; /* Pushes content to opposite sides - title and date */
   background-color: rgb(31, 53, 93);
   padding: 0.5rem;
