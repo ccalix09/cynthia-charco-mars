@@ -1,55 +1,98 @@
 body {
-    background-color: rgb(0, 53, 99);
-    color: rgb(85, 243, 209);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgb(0, 53, 99); /* Sets the background color of the whole page */
+  color: rgb(85, 243, 209); /* Default text color for page */
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; /* font */
 }
+/* Main page heading - name */
 h1 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 300;
-    color: rgb(126, 197, 248);
-    margin: 2rem 0;
+  text-align: center; /* Centers text */
+  font-size: 3rem; /* Name size */
+  font-weight: 500; /* Thickness of name */
+  color: rgb(126, 197, 248); /* Name color */
+  margin: 2rem 0; /* Space above and below the heading */
 }
+/* Navigation bar */
+nav {
+  background-color: rgb(3, 190, 214); /* Background color of nav bar */
+  padding: 0.75rem; /* Inner spacing inside nav */
+}
+/* Navigation list container */
+nav ul {
+  list-style: none;
+  display: flex; /* Displays list items in a row */
+  justify-content: center; /* Centers items horizontally */
+  gap: 50px; /* Space between nav links */
+  padding: 0; /* Removes default */
+  margin: 0; /* Removes default */
+}
+/* Navigation links */
+nav a {
+  color: white; /* Link text */
+  text-decoration: none; /* Removes underline */
+  font-weight: bold; /* Text bold */
+}
+/* Sections */
 section {
-    background-color: rgb(33, 123, 188);
-    margin: 2rem auto;
-    padding: 1.7rem;
-    max-width: 700px;
-    border-radius: 15px;
+  background-color: rgb(33, 123, 188);
+  margin: 2rem auto; /* Vertical spacing and center alignmment */
+  padding: 1.7rem; /* Inner spacing */
+  max-width: 700px; /* Limits the section width */
+  border-radius: 15px; /* Rounded corners */
 }
 h2 {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem; /* Space below heading */
 }
+/* Paragraph inside About section */
 #About p {
-    text-align: left;
+  text-align: left; /* Aligns text to the left */
 }
-#Experience ul {
-    list-style: none;
-    padding: 0;
+/* Experience section with Flexbox */
+.experience-container {
+  display: flex; 
+  flex-direction: column; /* Stack items vertically */
+  background-color: rgb(0, 101, 151);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 5px 10px; /* Adds shadow */ 
 }
-#Experience li {
-    background-color: rgb(129, 251, 237);
-    color: rgb(2, 142, 170);
-    padding: 0.80rem;
-    margin-bottom: 0.5rem;
-    border-radius: 7px;
-    font-weight: 500;
+/* Experience header (title and date) */
+.experience-header {
+  display: flex;
+  justify-content: space-between; /* Pushes content to opposite sides - title and date */
+  background-color: rgb(31, 53, 93);
+  padding: 0.5rem;
+  border-radius: 7px; 
 }
-#Connect ul {
-    list-style: none;
-    padding: 0;
+.experience-header h3 {
+  margin: 0; /* Removes default margin from h3 */ 
 }
-#Connect li {
-    margin-bottom: 0.5rem;
+.experience-header span {
+  font-size: 0.9rem; /* Date text */
 }
+/* Connect section with Flexbox */
+.connect-links {
+  display: flex;
+  justify-content: left; /* Aligns links to the left */
+  gap: 1.5rem; /* Space between GitHub and Slack */
+}
+.connect-links a {
+  background-color: rgb(20, 75, 138);
+  padding: 0.5rem 1rem;
+  border-radius: 35px;
+  box-shadow: 5px 7px;
+}
+/* Links inside Connect section */
 #Connect a {
-    color: blanchedalmond;
-    text-decoration: none;
-    font-weight: 550;
+  color: rgb(255, 210, 142);
+  text-decoration: none; /* No underline by default */
+  font-weight: 550; 
 }
+/* Hover effect for connect links */
 #Connect a:hover {
-    text-decoration: underline;
+  text-decoration: underline; /* Adds underline on hover */
 }
