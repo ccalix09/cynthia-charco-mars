@@ -1,9 +1,7 @@
 body {
   background-color: rgb(0, 53, 99); /* Sets the background color of the whole page */
   color: rgb(85, 243, 209); /* Default text color for page */
-  font-family:
-    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; /* font */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* font */
 }
 /* Main page heading - name */
 h1 {
@@ -53,12 +51,12 @@ h2 {
 }
 /* Experience section with Flexbox */
 .experience-container {
-  display: flex; 
+  display: flex;
   flex-direction: column; /* Stack items vertically */
   background-color: rgb(0, 101, 151);
   padding: 1rem;
   border-radius: 15px;
-  box-shadow: 5px 10px; /* Adds shadow */ 
+  box-shadow: 5px 10px; /* Adds shadow */
 }
 /* Experience header (title and date) */
 .experience-header {
@@ -66,10 +64,10 @@ h2 {
   justify-content: space-between; /* Pushes content to opposite sides - title and date */
   background-color: rgb(31, 53, 93);
   padding: 0.5rem;
-  border-radius: 7px; 
+  border-radius: 7px;
 }
 .experience-header h3 {
-  margin: 0; /* Removes default margin from h3 */ 
+  margin: 0; /* Removes default margin from h3 */
 }
 .experience-header span {
   font-size: 0.9rem; /* Date text */
@@ -90,9 +88,110 @@ h2 {
 #Connect a {
   color: rgb(255, 210, 142);
   text-decoration: none; /* No underline by default */
-  font-weight: 550; 
+  font-weight: 550;
 }
 /* Hover effect for connect links */
 #Connect a:hover {
   text-decoration: underline; /* Adds underline on hover */
+}
+/* For tablet style */
+@media (min-width: 600px) and (max-width: 1000px) {
+  body {
+    background-color: rgb(105, 238, 178); /* background color change for tablet */
+    color: rgb(24, 140, 134); /* color change for text on tablet */
+    font-family: 'Times New Roman', Times, serif; /* font changes - Times New Roman for tablet */
+  }
+  h1 {
+    font-style: italic; /* font style for tablet - on name */
+    font-size: 1.3rem; /* font size change for tablet - decrease when compared to mobile */
+    letter-spacing: 1px;
+    color: rgb(42, 139, 165); /* name color change for tablet */
+  }
+  nav {
+    background-color: lightgoldenrodyellow; 
+    padding: 1rem 0.5rem;
+  }
+  nav ul {
+    gap: 2.7rem; 
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    color: rgb(22, 129, 124);
+    font-weight: bolder; /* font weight change on tablet - bolder */
+  }
+  section {
+    background-color: lightskyblue;
+    max-width: 90%;
+    margin: 2.7rem auto; /* margin change for */
+    padding: 2rem;
+  }
+  .experience-container {
+    background-color: rgb(129, 255, 198); /* background color change for experience container */
+    padding: 1.5rem; 
+    box-shadow: 3px 9px;
+  }
+  .experience-header {
+    background-color: rgb(128, 210, 254); /* background color change for experience header */
+  }
+  .connect-links{
+    gap: 0.8rem;
+  }
+  .connect-links a {
+    background-color: rgb(150, 255, 227);
+    padding: 0.6rem 0.65rem;
+    font-size: 0.9rem;
+  }
+  #Connect a {
+    color: rgb(42, 119, 136);
+    font-weight: 600;
+  }
+}
+/* For mobile style */
+@media (max-width: 500px) {
+  body {
+    background-color: indigo; /* background color change for mobile */
+    color: bisque; /* color change for text on mobile */
+    font-family: 'Courier New', Courier, monospace; /* font changes - Courier New for mobile */
+  }
+  h1 {
+    font-size: 1.8rem;
+    color: rgb(169, 78, 255); /* name color change for mobile */
+    margin: 0.75rem 0;
+    line-height: 1.2;
+  }
+  nav {
+    background-color: rgb(105, 27, 104);
+    padding: 0.8rem 0.8rem; 
+  }
+  nav ul {
+    font-style: italic; /* font style for mobile - on nav list */
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    color: violet;
+    font-weight: lighter; /* font weight change for mobile - lighter */
+  }
+  section {
+    background-color: purple;
+    max-width: 85%;
+    margin: 55px auto;
+    padding: 1.25rem;
+  }
+  .experience-container {
+    background-color: rgb(105, 46, 187); /* background color change for experience container */
+  }
+  .experience-header {
+    background-color: rgb(180, 83, 210); /* background color change for experience header */ 
+  }
+  .connect-links {
+    gap: 0.75rem;
+  }
+  .connect-links a {
+    background-color: rgb(162, 112, 255);
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
 }
