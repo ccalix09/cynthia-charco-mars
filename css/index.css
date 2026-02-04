@@ -94,6 +94,7 @@ h2 {
 #Connect a:hover {
   text-decoration: underline; /* Adds underline on hover */
 }
+/* MEDIA QUERIES */ 
 /* For tablet style */
 @media (min-width: 600px) and (max-width: 1000px) {
   body {
@@ -123,7 +124,7 @@ h2 {
   section {
     background-color: lightskyblue;
     max-width: 90%;
-    margin: 2.7rem auto; /* margin change for */
+    margin: 2.7rem auto;
     padding: 2rem;
   }
   .experience-container {
