@@ -72,6 +72,28 @@ h2 {
 .experience-header span {
   font-size: 0.9rem; /* Date text */
 }
+/* Skills section with Flexbox */
+#Skills ul {
+  display: flex;
+  flex-direction: column; 
+  gap: 18px;
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;
+}
+#Skills li {
+  background-color: black;
+  color: lightseagreen;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/* Name, Year (with copyright symbol) */
+footer {
+  text-align: center;
+}
 /* Connect section with Flexbox */
 .connect-links {
   display: flex;
@@ -135,6 +157,22 @@ h2 {
   .experience-header {
     background-color: rgb(128, 210, 254); /* background color change for experience header */
   }
+  #Skills ul {
+    gap: 10px;
+  }
+  #Skills li {
+    background-color: rgb(163, 251, 220);
+    color: rgb(69, 102, 162);
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+  }
+  /* Name, Year (with copyright symbol) */
+  footer {
+    text-align: right; /* text placed to right */
+  }
   .connect-links{
     gap: 0.8rem;
   }
@@ -182,10 +220,26 @@ h2 {
     padding: 1.25rem;
   }
   .experience-container {
-    background-color: rgb(105, 46, 187); /* background color change for experience container */
+    background-color: rgb(112, 50, 200); /* background color change for experience container */
   }
   .experience-header {
     background-color: rgb(180, 83, 210); /* background color change for experience header */ 
+  }
+  #Skills ul {
+    gap: 25px;
+    flex-wrap: wrap;
+    flex-direction: row; /* places skills list horizontally */
+  }
+  #Skills li {
+    background-color: rgb(218, 139, 218);
+    color: rgb(105, 59, 204); /* skills list text color */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 300;
+    font-weight: bolder;
+  }
+  /* Name, Year (with copyright symbol) */
+  footer {
+    text-align: left; /* text placed to left */
   }
   .connect-links {
     gap: 0.75rem;
