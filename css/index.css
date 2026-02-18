@@ -169,7 +169,6 @@ button[type="submit"]:hover {
   word-break: break-word; /* Breaks long words if needed */
 }
 #messages li a {
-  text-decoration: none; /* Removes underline from name */
   color: blue; /* Name color */
 }
 #messages button {

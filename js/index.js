@@ -41,16 +41,16 @@ messageForm.addEventListener("submit", function (event) {
 
     // Create name link - innerText instead of innerHTML
     const nameLink = document.createElement("a");
-    nameLink.innerText = usersName;
-    nameLink.href = "mailito" + usersEmail;
+    nameLink.href = "mailito:" + usersEmail;
+    nameLink.textContent = usersName;
 
     // Create message span
     const messageSpan = document.createElement("span");
-    messageSpan.innerText = " " + usersMessage;
+    messageSpan.textContent = " " + usersMessage;
 
     // Create remove button
     const removeButton = document.createElement("button");
-    removeButton.innerText = "Remove";
+    removeButton.textContent = "Remove";
     removeButton.type = "button";
 
     // Adds an event listener to the removeButton element that handles "click" event
