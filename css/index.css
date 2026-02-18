@@ -116,12 +116,74 @@ footer {
 #Connect a:hover {
   text-decoration: underline; /* Adds underline on hover */
 }
+/* Message Form/Leave a Message Section */
+#leave-message h2 {
+  text-align: center; /* Centers leave a message heading */
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between each form field */
+}
+label {
+  font-weight: 700; 
+}
+input, textarea {
+  padding: 0.75rem; /* Space inside the input */
+  font-size: 1rem; /* Readable font size */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+textarea {
+  min-height: 120px; 
+  resize: vertical; /* Resize up/down only - message box */
+}
+button[type="submit"] {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold; /* Makes "Submit" text bold */
+  border: none; /* Remove default button border */
+  border-radius: 6px;
+  background-color: cyan; /* Submit button color */
+  color: black; /* "Submit" text color */ 
+  cursor: pointer; /* Indicates that it is clickable - submit button */
+  transition: background-color 0.2s ease; /* Smooth hover transition */
+}
+button[type="submit"]:hover {
+  color: cyan;
+  background-color: black; /* Changes color of button when hover over it */
+}
+#messages li {
+  display: flex; /* Arranges name, message, and remove button horizontally */ 
+  align-items: flex-start; /* Align items at top */
+  justify-content: space-between; /* "Remove" button to right */
+  gap: 30px; /* Space between message text and button */
+  padding: 10px 0; /* Vertical spacing for each message */
+  border-bottom: 1px solid blanchedalmond; /* Separates messages */
+}
+#messages li span {
+  flex: 1;
+  min-width: 0; /* Text to shrink in flex container */
+  word-break: break-word; /* Breaks long words if needed */
+}
+#messages li a {
+  text-decoration: none; /* Removes underline from name */
+  color: blue; /* Name color */
+}
+#messages button {
+  margin-left: 15px; /* Space between text and button */
+  padding: 6px 12px; /* Area that is clickable */
+  font-size: 14px; /* "Remove" text size */
+  cursor: pointer; /* Indicates that it is clickable - remove button */
+}
 /* MEDIA QUERIES */ 
 /* For tablet style */
 @media (min-width: 600px) and (max-width: 1000px) {
   body {
     background-color: rgb(105, 238, 178); /* background color change for tablet */
-    color: rgb(24, 140, 134); /* color change for text on tablet */
+    color: darkcyan; /* color change for text on tablet */
     font-family: 'Times New Roman', Times, serif; /* font changes - Times New Roman for tablet */
   }
   h1 {
@@ -184,6 +246,18 @@ footer {
   #Connect a {
     color: rgb(42, 119, 136);
     font-weight: 600;
+  }
+  /* Message Form/Leave a Message Section */
+  button[type="submit"] {
+    color: darkcyan;
+    background-color: aquamarine;
+  }
+  button[type="submit"]:hover {
+    color: darkcyan;
+    background-color: aqua;
+  }
+  #messages li a {
+    color: black;
   }
 }
 /* For mobile style */
@@ -248,5 +322,17 @@ footer {
     background-color: rgb(162, 112, 255);
     padding: 0.45rem 0.75rem;
     font-size: 0.8rem;
+  }
+  /* Message Form/Leave a Message Section */
+  button[type="submit"] {
+    color: wheat;
+    background-color: darkorchid;
+  }
+  button[type="submit"]:hover {
+    color: black;
+    background-color: blueviolet;
+  }
+  #messages li a {
+    color: plum;
   }
 }

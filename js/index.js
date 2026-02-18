@@ -18,3 +18,55 @@ for (let i = 0; i < skills.length; i++) {
     skill.innerText = skills[i]; // Sets text to current skill
     skillsList.appendChild(skill); // Appends skill element to the skillsList element
 }
+// Handle Message Form Submit
+const messageForm = document.querySelector("form[name='leave-message']");
+messageForm.addEventListener("submit", function (event) {
+
+    // Prevent the default refreshing behavior of the "submit" event
+    event.preventDefault();
+
+    // Get form values - 3
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+
+    console.log(usersName, usersEmail, usersMessage);
+
+    // Select messages section and list
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
+
+    // Create new list item
+    const newMessage = document.createElement("li");
+
+    // Create name link - innerText instead of innerHTML
+    const nameLink = document.createElement("a");
+    nameLink.innerText = usersName;
+    nameLink.href = "mailito" + usersEmail;
+
+    // Create message span
+    const messageSpan = document.createElement("span");
+    messageSpan.innerText = " " + usersMessage;
+
+    // Create remove button
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "Remove";
+    removeButton.type = "button";
+
+    // Adds an event listener to the removeButton element that handles "click" event
+    removeButton.addEventListener("click", function () {
+        const entry = removeButton.parentNode;
+        entry.remove();
+    });
+
+    // Appends everything (e.g. removeButton to newMessage)
+    newMessage.appendChild(nameLink);
+    newMessage.appendChild(messageSpan);
+    newMessage.appendChild(removeButton);
+
+    // Append list item to message list
+    messageList.appendChild(newMessage);
+
+    // Resets the form
+    messageForm.reset(); 
+});
