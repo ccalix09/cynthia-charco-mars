@@ -14,59 +14,78 @@ const skills = ["JavaScript", "HTML", "CSS", "GitHub", "Responsive Design"]; // 
 const skillsSection = document.getElementById("Skills"); // Selects the skills section by ID
 const skillsList = skillsSection.querySelector("ul"); // Selects the <ul> in skills section
 for (let i = 0; i < skills.length; i++) {
-    let skill = document.createElement("li"); // Creates a new list item element
-    skill.innerText = skills[i]; // Sets text to current skill
-    skillsList.appendChild(skill); // Appends skill element to the skillsList element
+  let skill = document.createElement("li"); // Creates a new list item element
+  skill.innerText = skills[i]; // Sets text to current skill
+  skillsList.appendChild(skill); // Appends skill element to the skillsList element
 }
 // Handle Message Form Submit
 const messageForm = document.querySelector("form[name='leave-message']");
 messageForm.addEventListener("submit", function (event) {
+  // Prevent the default refreshing behavior of the "submit" event
+  event.preventDefault();
 
-    // Prevent the default refreshing behavior of the "submit" event
-    event.preventDefault();
+  // Get form values - 3
+  const usersName = event.target.usersName.value;
+  const usersEmail = event.target.usersEmail.value;
+  const usersMessage = event.target.usersMessage.value;
 
-    // Get form values - 3
-    const usersName = event.target.usersName.value;
-    const usersEmail = event.target.usersEmail.value;
-    const usersMessage = event.target.usersMessage.value;
+  console.log(usersName, usersEmail, usersMessage);
 
-    console.log(usersName, usersEmail, usersMessage);
+  // Select messages section and list
+  const messageSection = document.getElementById("messages");
+  const messageList = messageSection.querySelector("ul");
 
-    // Select messages section and list
-    const messageSection = document.getElementById("messages");
-    const messageList = messageSection.querySelector("ul");
+  // Create new list item
+  const newMessage = document.createElement("li");
 
-    // Create new list item
-    const newMessage = document.createElement("li");
+  // Create name link - innerText instead of innerHTML
+  const nameLink = document.createElement("a");
+  nameLink.href = "mailito:" + usersEmail;
+  nameLink.textContent = usersName;
 
-    // Create name link - innerText instead of innerHTML
-    const nameLink = document.createElement("a");
-    nameLink.href = "mailito:" + usersEmail;
-    nameLink.textContent = usersName;
+  // Create message span
+  const messageSpan = document.createElement("span");
+  messageSpan.textContent = " " + usersMessage;
 
-    // Create message span
-    const messageSpan = document.createElement("span");
-    messageSpan.textContent = " " + usersMessage;
+  // Create remove button
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.type = "button";
 
-    // Create remove button
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.type = "button";
+  // Adds an event listener to the removeButton element that handles "click" event
+  removeButton.addEventListener("click", function () {
+    const entry = removeButton.parentNode;
+    entry.remove();
+  });
 
-    // Adds an event listener to the removeButton element that handles "click" event
-    removeButton.addEventListener("click", function () {
-        const entry = removeButton.parentNode;
-        entry.remove();
-    });
+  // Appends everything (e.g. removeButton to newMessage)
+  newMessage.appendChild(nameLink);
+  newMessage.appendChild(messageSpan);
+  newMessage.appendChild(removeButton);
 
-    // Appends everything (e.g. removeButton to newMessage)
-    newMessage.appendChild(nameLink);
-    newMessage.appendChild(messageSpan);
-    newMessage.appendChild(removeButton);
+  // Append list item to message list
+  messageList.appendChild(newMessage);
 
-    // Append list item to message list
-    messageList.appendChild(newMessage);
-
-    // Resets the form
-    messageForm.reset(); 
+  // Resets the form
+  messageForm.reset();
 });
+// Fetch Repositories
+fetch("https://api.github.com/users/ccalix09/repos")
+  .then(response => response.text()) // Manually parse
+  .then(text => {
+    const repositories = JSON.parse(text); 
+    console.log(repositories);
+
+    // Display repositories in list
+    const projectSection = document.getElementById("Projects"); // Gets Projects section from the HTML
+    const projectList = projectSection.querySelector("ul"); // Selects the <ul> in Projects section
+
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement("li"); // Creates a new list item element for each repository
+      project.innerText = repositories[i]["name"]; // Sets the text of the list item to the name of the repository
+      projectList.appendChild(project);
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching repositories:", error); // Logs any errors that occur during the fetch operation
+  });
