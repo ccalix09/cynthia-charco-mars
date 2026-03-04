@@ -90,6 +90,21 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
 }
+/* Projects section styling */
+#Projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+}
+#Projects li {
+  background-color: cyan;
+  color: black;
+  font-style: italic;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
 /* Name, Year (with copyright symbol) */
 footer {
   text-align: center;
@@ -230,6 +245,9 @@ button[type="submit"]:hover {
     font-weight: 600;
     font-style: italic;
   }
+  #Projects li {
+    background-color: aquamarine;
+  }
   /* Name, Year (with copyright symbol) */
   footer {
     text-align: right; /* text placed to right */
@@ -309,6 +327,10 @@ button[type="submit"]:hover {
     font-family: 'Courier New', Courier, monospace;
     font-size: 300;
     font-weight: bolder;
+  }
+  #Projects li {
+    background-color:rgb(168, 77, 217);
+    color: bisque;
   }
   /* Name, Year (with copyright symbol) */
   footer {
